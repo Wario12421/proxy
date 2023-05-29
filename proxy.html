@@ -1,83 +1,129 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Proxy</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 20px;
-            background-color: #000;
-        }
+  <title>Wario's Proxy</title>
+  <style>
+    body {
+      background: linear-gradient(45deg, #00ffea, #a600ff, #ff00ee, #ff6b00);
+      background-size: 400% 400%;
+      animation: gradientAnimation 10s ease infinite;
+      color: white;
+      font-family: Arial, sans-serif;
+      margin: 0;
+    }
 
-        h1 {
-            text-align: center;
-            color: #fff;
-            margin-top: 0;
-            padding: 20px 0;
-        }
+    @keyframes gradientAnimation {
+      0% {
+        background-position: 0% 50%;
+      }
+      50% {
+        background-position: 100% 50%;
+      }
+      100% {
+        background-position: 0% 50%;
+      }
+    }
 
-        .form-container {
-            max-width: 400px;
-            margin: 0 auto;
-            background-color: #000;
-            border: 2px solid #fff;
-            border-radius: 10px;
-            padding: 20px;
-            box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
-        }
+    .header {
+      padding: 10px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 1;
+    }
 
-        label {
-            display: block;
-            margin-bottom: 10px;
-            color: #fff;
-        }
+    .header h1 {
+      margin: 0;
+      padding: 10px;
+      transform: translateY(20px);
+      color: white;
+    }
 
-        input[type="text"] {
-            width: 100%;
-            padding: 10px;
-            border: none;
-            border-radius: 20px;
-            box-shadow: 0 0 5px rgba(255, 255, 255, 0.5);
-            outline: none;
-        }
+    .header .nav-buttons {
+      display: flex;
+      gap: 10px;
+    }
 
-        button {
-            display: block;
-            width: 100%;
-            padding: 10px;
-            margin-top: 10px;
-            background-color: #4CAF50;
-            color: white;
-            border: none;
-            border-radius: 4px;
-            cursor: pointer;
-        }
+    .nav-button {
+      padding: 10px 20px;
+      background-color: transparent;
+      border: 2px solid pink;
+      border-radius: 50px;
+      color: white;
+      font-size: 16px;
+      cursor: pointer;
+      animation: buttonAnimation 1s ease infinite;
+    }
 
-        #response {
-            margin-top: 20px;
-            padding: 10px;
-            background-color: #f1f1f1;
-            border-radius: 4px;
-            font-size: 14px;
-            color: #333;
-            word-wrap: break-word;
-        }
-    </style>
+    @keyframes buttonAnimation {
+      0% {
+        transform: scale(1);
+      }
+      50% {
+        transform: scale(1.1);
+      }
+      100% {
+        transform: scale(1);
+      }
+    }
+
+    .search-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 80vh;
+      margin-top: 80px;
+    }
+
+    .search-bar {
+      padding: 10px;
+      border: 2px solid pink;
+      border-radius: 5px;
+      font-size: 16px;
+      outline: none;
+      transition: width 0.3s ease;
+      width: 200px;
+    }
+
+    .search-bar:focus {
+      width: 300px;
+    }
+
+    .search-button {
+      margin-top: 10px;
+      padding: 10px 20px;
+      background-color: transparent;
+      border: 2px solid pink;
+      border-radius: 5px;
+      color: white;
+      font-size: 16px;
+      cursor: pointer;
+      animation: buttonAnimation 1s ease infinite;
+    }
+  </style>
 </head>
 <body>
-    <h1>Proxy</h1>
-    <div class="form-container">
-        <form id="proxyForm">
-            <label for="url">Enter URL:</label>
-            <input type="text" id="url" name="url" placeholder="https://example.com">
-            <button type="submit">Fetch</button>
-        </form>
-        <div id="response"></div>
+  <div class="header">
+    <div class="nav-buttons">
+      <button class="nav-button">Credits</button>
+      <button class="nav-button">About</button>
+      <button class="nav-button">Contact</button>
     </div>
+  </div>
 
-    <script src="Proxy.js"></script>
+  <div class="search-container">
+    <input type="text" class="search-bar" placeholder="Enter your search term">
+    <button class="search-button">Search</button>
+  </div>
+
+  <script src="proxy.js"></script>
 </body>
 </html>
+
 
 
