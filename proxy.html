@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Wario's Proxy</title>
+    <title>Proxy</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -16,6 +16,9 @@
         .form-container {
             max-width: 400px;
             margin: 0 auto;
+            padding: 20px;
+            border: 2px solid #000;
+            border-radius: 10px;
         }
 
         label {
@@ -23,17 +26,16 @@
             margin-bottom: 10px;
         }
 
-        input[type="text"],
-        textarea {
+        input[type="text"] {
             width: 100%;
             padding: 10px;
             border: 1px solid #ccc;
             border-radius: 4px;
+            outline: none;
         }
 
         button {
-            display: block;
-            width: 100%;
+            display: inline-block;
             padding: 10px;
             margin-top: 10px;
             background-color: #4CAF50;
@@ -41,6 +43,16 @@
             border: none;
             border-radius: 4px;
             cursor: pointer;
+        }
+
+        #response {
+            margin-top: 20px;
+            padding: 10px;
+            background-color: #f1f1f1;
+            border-radius: 4px;
+            font-size: 14px;
+            color: #333;
+            word-wrap: break-word;
         }
     </style>
 </head>
@@ -58,3 +70,4 @@
     <script src="Proxy.js"></script>
 </body>
 </html>
+
